@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            tools:context=".DiceRoller"
+            android:id="@+id/diceLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+        <ImageView
+                android:layout_width="143dp"
+                android:layout_height="143dp"
+                android:id="@+id/imageView"
+                android:contentDescription="aaa"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/empty_dice"
+                app:srcCompat="@drawable/empty_dice"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                android:onClick="funny"
+                android:id="@+id/label"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"/>
+    <Button
+            android:text="let's roll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/roller" android:layout_gravity="center_horizontal"/>
+</LinearLayout>

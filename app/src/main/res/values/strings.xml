@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="immagine">immagine</string>
+    <string name="dice">Let\'s roll</string>
+    <string name="fire">Go</string>
+    <string name="cancel">Cancel</string>
+    <string name="api_key">Sbvm1ly3ZgmeZUeASUaUWG01icWgmnAQI2UyyoXD</string>
+    <string name="change_layout_manager">Change Layout</string>
+</resources>
