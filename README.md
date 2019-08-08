@@ -1,5 +1,6 @@
 # AppImprove
 An app with basic test and tecnique for Android dev learning
+![Preview](app/src/main/res/drawable/Home.png?raw=true "Home")
 
 *Projects*
 
