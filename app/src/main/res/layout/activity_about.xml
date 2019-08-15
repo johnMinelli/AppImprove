@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="myName" type="com.example.myapplication.MyName"/>
+    </data>
+    <LinearLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".About" android:orientation="vertical" android:gravity="center_horizontal">
+
+        <TextView
+                android:text="@={myName.name}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView3" android:textSize="25sp"
+                android:gravity="center_horizontal" android:textStyle="bold" android:fontFamily="@font/montserrat"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" app:srcCompat="@android:drawable/btn_star_big_on"
+                android:id="@+id/imageView2"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="Name"
+                android:ems="10"
+                android:id="@+id/nick_input"
+                android:hint="Nickname" android:paddingStart="10sp" android:paddingEnd="10sp"
+        />
+        <TextView
+                android:text="@={myName.nickname}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/nick_text"
+                android:visibility="gone" android:gravity="center" android:textSize="20sp"
+                android:fontFamily="@font/montserrat"/>
+        <Button
+                android:text="Button"
+                android:layout_width="149dp"
+                android:layout_height="wrap_content" android:id="@+id/nick_btn"/>
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="250dp" android:paddingStart="10sp" android:paddingEnd="10sp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="vertical">
+                <TextView
+                        android:text="Hi, here Giovanni Minelli\nCan i blame you for that if you want to know?\nNo you have all the rights to know. The knowledge is the base of the life: walking, speaking, eating if you don't know you can't BE. So, i assume you know but if you know you can't be conscious. you jnow that you can't know, but if you know that you don't know you don't BE equals you don't exist, but that is absurd because you are making this think.\nSo put yourself in peace and realize that the absurd is part of the life and don't worry about what you know or you don't know."
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:id="@+id/textView4"
+                        android:textSize="20sp" android:fontFamily="@font/montserrat"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

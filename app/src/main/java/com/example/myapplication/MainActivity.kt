@@ -69,6 +69,8 @@ class MainActivity : AppCompatActivity() {
             R.id.frag -> {intent = FragmentSwitcher.newIntent(getApplicationContext())}
             R.id.recy -> {intent = Recycler.newIntent(getApplicationContext())}
             R.id.mvvm -> {intent = ViewModelPattern.newIntent(getApplicationContext())}
+            R.id.about -> {intent = About.newIntent(getApplicationContext())}
+            R.id.cons -> {intent = Constraint.newIntent(getApplicationContext())}
         }
         Log.w("a","b")
         startActivityForResult(intent!!, ADD_TASK_REQUEST)

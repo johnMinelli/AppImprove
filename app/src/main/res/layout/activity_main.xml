@@ -31,4 +31,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/mvvm" android:onClick="switchActivity"/>
+    <Button
+            android:text="About binding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/about" android:onClick="switchActivity"/>
+    <Button
+            android:text="Constraint layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cons" android:onClick="switchActivity"/>
 </LinearLayout>
