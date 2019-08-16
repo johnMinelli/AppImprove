@@ -71,6 +71,7 @@ class MainActivity : AppCompatActivity() {
             R.id.mvvm -> {intent = ViewModelPattern.newIntent(getApplicationContext())}
             R.id.about -> {intent = About.newIntent(getApplicationContext())}
             R.id.cons -> {intent = Constraint.newIntent(getApplicationContext())}
+            R.id.triv -> {intent = Trivia.newIntent(getApplicationContext())}
         }
         Log.w("a","b")
         startActivityForResult(intent!!, ADD_TASK_REQUEST)
