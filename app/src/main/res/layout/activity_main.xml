@@ -42,8 +42,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/cons" android:onClick="switchActivity"/>
     <Button
-            android:text="Trivia"
+            android:text="Navigator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/triv" android:onClick="switchActivity"/>
+    <Button
+            android:text="Lifecycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dess" android:onClick="switchActivity"/>
 </LinearLayout>

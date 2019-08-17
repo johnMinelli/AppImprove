@@ -12,7 +12,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat.startActivity
-
+import androidx.lifecycle.Lifecycle
 
 
 class MainActivity : AppCompatActivity() {
@@ -72,6 +72,7 @@ class MainActivity : AppCompatActivity() {
             R.id.about -> {intent = About.newIntent(getApplicationContext())}
             R.id.cons -> {intent = Constraint.newIntent(getApplicationContext())}
             R.id.triv -> {intent = Trivia.newIntent(getApplicationContext())}
+            R.id.dess -> {intent = Bakery.newIntent(getApplicationContext())}
         }
         Log.w("a","b")
         startActivityForResult(intent!!, ADD_TASK_REQUEST)
