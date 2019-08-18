@@ -51,4 +51,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dess" android:onClick="switchActivity"/>
+    <Button
+            android:text="MVVM pattern e LiveData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buzz" android:onClick="switchActivity"/>
 </LinearLayout>
