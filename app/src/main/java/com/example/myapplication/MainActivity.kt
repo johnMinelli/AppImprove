@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
             R.id.triv -> {intent = Trivia.newIntent(getApplicationContext())}
             R.id.dess -> {intent = Bakery.newIntent(getApplicationContext())}
             R.id.buzz -> {intent = Buzzer.newIntent(getApplicationContext())}
+            R.id.sleep -> {intent = Sleepy.newIntent(getApplicationContext())}
         }
         Log.w("a","b")
         startActivityForResult(intent!!, ADD_TASK_REQUEST)

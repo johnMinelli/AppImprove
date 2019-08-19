@@ -29,4 +29,12 @@
         <item name="android:textColor">@color/grey_button_color</item>
         <item name="colorControlHighlight">@color/skip_red_color</item>
     </style>
+
+    <!-- Basic styling for the buttons. -->
+    <style name="SleepButtons" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/white_text_color</item>
+        <item name="colorAccent">@color/selected_green_color</item>
+        <item name="colorControlHighlight">@color/selected_green_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
