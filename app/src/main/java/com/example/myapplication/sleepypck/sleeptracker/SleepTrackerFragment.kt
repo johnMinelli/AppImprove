@@ -20,6 +20,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -28,6 +29,7 @@ import androidx.navigation.NavHost
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentSleepTrackerBinding
 import com.example.myapplication.sleepypck.database.SleepDatabase
@@ -62,6 +64,33 @@ class SleepTrackerFragment : Fragment() {
 
         binding.dataSleepTrackerViewModel = viewModel
         binding.setLifecycleOwner(this)
+
+        val manager = GridLayoutManager(activity, 3)
+        manager.spanSizeLookup = object: GridLayoutManager.SpanSizeLookup(){
+            override fun getSpanSize(position: Int) = when(position) {
+                0 -> 3
+                else -> 1
+            }
+        }
+        binding.sleepList.layoutManager = manager
+
+        val adapter = SleepNightAdapter(SleepNightListener { nightId ->
+            viewModel.onSleepNightClicked(nightId)
+        })
+
+        viewModel.navigateToSleepDataQuality.observe(this, Observer { night ->
+            night?.let {
+                this.findNavController().navigate(SleepTrackerFragmentDirections.actionSleepTrackerFragmentToSleepDetailFragment(night))
+                viewModel.onSleepDataQualityNavigated()
+            }
+        })
+
+        binding.sleepList.adapter = adapter
+        viewModel.nights.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                adapter.addHeaderAndSubmitList(it)
+            }
+        })
 
         viewModel.endSleep.observe(this, Observer { night ->
             night?.let {

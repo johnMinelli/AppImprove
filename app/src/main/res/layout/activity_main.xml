@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/buzz" android:onClick="switchActivity"/>
     <Button
-            android:text="DB e PersistentState"
+            android:text="DB e RecycleView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sleep" android:onClick="switchActivity"/>

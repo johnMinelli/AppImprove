@@ -20,9 +20,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.myapplication.sleepypck.database.SleepDatabase
 import com.example.myapplication.sleepypck.database.SleepDatabaseDao
-import com.example.myapplication.sleepypck.database.SleepDatabaseDao_Impl
 import kotlinx.coroutines.*
 import okhttp3.Dispatcher
 
