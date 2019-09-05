@@ -67,8 +67,13 @@ class GameFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentGameBinding>(
-                inflater, R.layout.fragment_game, container, false)
+        //Quando hai la classe di binding hai due opzioni per fare l'inflate dell'xml di un fragment <-- figlio di un container
+        //(1) usi la classe di Binding del fragment che contiene il layout al suo interno
+        val layoutInflater = LayoutInflater.from(container?.context)
+        val binding = FragmentGameBinding.inflate(layoutInflater, container, false)
+        //(2) usi BindingUtil e gli passi il layout
+        //val binding = DataBindingUtil.inflate<FragmentGameBinding>(
+        //        inflater, R.layout.fragment_game, container, false)
 
         // Shuffles the questions and sets the question index to the first question.
         randomizeQuestions()

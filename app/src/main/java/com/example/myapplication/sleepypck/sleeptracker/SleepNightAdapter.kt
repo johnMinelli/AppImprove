@@ -19,24 +19,32 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+
+//(1) fai arrivare il clicklistener inizializzato dal fragment e lo passi durante il binding onBindViewHolder
+//allo specifico holder tramite una funzione creata nella classe dell'holder (+bello)
+//(2) fai arrivare il clicklistener inizializzato dal fragment e lo passi al costruttore durante la creazione onCreateViewHolder
+//dello specifico holder    <-- in questo caso non gli passo solo il clicklistener al costruttore ma l'intero builder specifico per il tipo di ItemList (+versatile/riutilizza l'adapter)
+
+
 private val ITEM_VIEW_TYPE_HEADER = 0
 private val ITEM_VIEW_TYPE_ITEM = 1
-
-//pre header
+//(1)pre diffUtil
+//class SleepNightAdapter : RecyclerView.Adapter<SleepNightAdapter.ViewHolder>() {
+//(2)(3)pre header
 //class SleepNightAdapter(val clickListener: SleepNightListener) : ListAdapter<SleepNight, SleepNightAdapter.ViewHolder>(SleepNightDiffCallback()) {
 class SleepNightAdapter(val clickListener: SleepNightListener) : ListAdapter<DataItem, RecyclerView.ViewHolder>(SleepNightDiffCallback()) {
 
-    /* using DiffUtil
-    var data = listOf<SleepNight>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
-
-    override fun getItemCount() = data.size*/
+    //(1)
+//    var data = listOf<SleepNight>()
+//        set(value) {
+//            field = value
+//            notifyDataSetChanged()
+//        }
+//
+//    override fun getItemCount() = data.size*/
 
     //////////////////////////////////////////////////////////////
-    //(2)(3)
+    //(2)(3) to use DiffUtil cambiamo il ritorno da RecyclerView.Adapter a ListAdapter
 //    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 //        //no more binding here but cliListener binding
 //        //val item = getItem(position)
@@ -71,20 +79,19 @@ class SleepNightAdapter(val clickListener: SleepNightListener) : ListAdapter<Dat
     //////////////////////////////////////////////////////////////
 
     //(1)
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextItemViewHolder {
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextItemViewHolder {       <-- nota come cambia cosa restituisco
 //        val layoutInflater = LayoutInflater.from(parent.context)
-//        val view = layoutInflater
-//            .inflate(R.layout.text_item_view, parent, false) as TextView
+//        val view = layoutInflater.inflate(R.layout.text_item_view, parent, false) as TextView
 //        return TextItemViewHolder(view)
 //    }
     //(2)
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {               <-- nota come cambia cosa restituisco
 //        val layoutInflater = LayoutInflater.from(parent.context)
 //        val view = layoutInflater.inflate(R.layout.list_item_sleep_night, parent, false)
 //        return ViewHolder(view)
 //    }
     //(3) right one
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {               <-- nota come cambia cosa restituisco
 //        return ViewHolder.from(parent)
 //    }
 
@@ -128,8 +135,10 @@ class SleepNightAdapter(val clickListener: SleepNightListener) : ListAdapter<Dat
         companion object {
             fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
+                //(1)
                 val binding = ListItemSleepNightBinding.inflate(layoutInflater, parent, false)
-
+                //(2)
+                //val binding = DataBindingUtil.inflate<ListItemSleepNightBinding>(layoutInflater,R.layout.list_item_sleep_night, parent, false)
                 return ViewHolder(binding)
             }
         }
